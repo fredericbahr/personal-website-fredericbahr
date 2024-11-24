@@ -23,6 +23,7 @@ import { technologies } from "./technologies";
 export const About = () => {
   /** Translation hook */
   const { t } = useTranslation();
+
   return (
     <VStack width="full" alignItems="start" spacing={8}>
       <Heading id="about">{t("about.title")}</Heading>

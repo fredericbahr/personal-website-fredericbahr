@@ -27,7 +27,7 @@ import {
 import { GithubLogo, Link as LinkIcon } from "@phosphor-icons/react";
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { useNavigate } from "react-router-dom";
+import { NavigateFunction, useNavigate } from "react-router-dom";
 
 export type ProjectBackgroundType = "none" | "lines" | "contour";
 
@@ -51,7 +51,7 @@ interface ProjectTileProps extends GridItemProps {
  */
 export const ProjectTile = ({ title, url, backgroundType = "none", links, ...props }: ProjectTileProps) => {
   /** hook for navigating */
-  const navigate = useNavigate();
+  const navigate: NavigateFunction = useNavigate();
 
   /** hook for translations */
   const { t } = useTranslation();

@@ -20,6 +20,7 @@ import screenshot2 from "../../../assets/projects/weather-data/screenshot-2.png"
 import screenshot3 from "../../../assets/projects/weather-data/screenshot-3.png";
 import weatherDataHeroImage from "../../../assets/projects/weather-data/weather-data-hero.jpg";
 import { ImageSlider } from "../../../components/ImageSlider";
+import { ScrollRestoration } from "../../../components/ScrollRestoration/ScrollRestoration";
 import { ProjectDetailHeader } from "./ProjectDetailHeader";
 
 /**
@@ -41,73 +42,77 @@ export const WeatherData = () => {
   };
 
   return (
-    <VStack width="full" alignItems="start" spacing={{ base: 2, lg: 8 }} marginTop={{ base: 4, lg: 16 }}>
-      <ProjectDetailHeader
-        focus={t("projects.details.weatherData.focus")}
-        period="-"
-        title={t("projects.projectTitles.weatherData")}
-        subtitle={t("projects.details.weatherData.subtitle")}
-      />
+    <>
+      <ScrollRestoration />
 
-      <Image
-        src={weatherDataHeroImage}
-        width="full"
-        maxHeight="50vh"
-        objectFit="cover"
-        marginTop={{ base: 4, lg: 0 }}
-      />
+      <VStack width="full" alignItems="start" spacing={{ base: 2, lg: 8 }} marginTop={{ base: 4, lg: 16 }}>
+        <ProjectDetailHeader
+          focus={t("projects.details.weatherData.focus")}
+          period="-"
+          title={t("projects.projectTitles.weatherData")}
+          subtitle={t("projects.details.weatherData.subtitle")}
+        />
 
-      <HStack marginTop={8} spacing={8} width="full" alignItems="center">
-        <Link href="https://github.com/fredericbahr/dbs_weatherdata" display="flex" gap={2}>
-          <Icon as={GithubLogo} boxSize={{ base: 5, lg: 6 }} />
-          <Text as="span">Github</Text>
-        </Link>
-      </HStack>
+        <Image
+          src={weatherDataHeroImage}
+          width="full"
+          maxHeight="50vh"
+          objectFit="cover"
+          marginTop={{ base: 4, lg: 0 }}
+        />
 
-      <VStack marginTop={4} spacing={16} width="full" alignItems="start">
-        <VStack width="full" alignItems="start" spacing={4}>
-          <Heading as="h2" fontSize="3xl">
-            {t("projects.details.goal")}
-          </Heading>
+        <HStack marginTop={8} spacing={8} width="full" alignItems="center">
+          <Link href="https://github.com/fredericbahr/dbs_weatherdata" display="flex" gap={2}>
+            <Icon as={GithubLogo} boxSize={{ base: 5, lg: 6 }} />
+            <Text as="span">Github</Text>
+          </Link>
+        </HStack>
 
-          <Text>{t("projects.details.weatherData.goal")}</Text>
-        </VStack>
+        <VStack marginTop={4} spacing={16} width="full" alignItems="start">
+          <VStack width="full" alignItems="start" spacing={4}>
+            <Heading as="h2" fontSize="3xl">
+              {t("projects.details.goal")}
+            </Heading>
 
-        <VStack width="full" alignItems="start" spacing={4}>
-          <Heading as="h2" fontSize="3xl">
-            {t("projects.details.implementation")}
-          </Heading>
+            <Text>{t("projects.details.weatherData.goal")}</Text>
+          </VStack>
 
-          <Text>{t("projects.details.weatherData.implementation")}</Text>
-        </VStack>
+          <VStack width="full" alignItems="start" spacing={4}>
+            <Heading as="h2" fontSize="3xl">
+              {t("projects.details.implementation")}
+            </Heading>
 
-        <VStack width="full" alignItems="start" spacing={4}>
-          <Heading as="h2" fontSize="3xl">
-            {t("projects.details.technologies")}
-          </Heading>
+            <Text>{t("projects.details.weatherData.implementation")}</Text>
+          </VStack>
 
-          <Stack direction={{ base: "column", lg: "row" }} width="full">
-            <Tag justifyContent="center">XML</Tag>
-            <Tag justifyContent="center">XML Schema Definiton</Tag>
-            <Tag justifyContent="center">XSL Transformation</Tag>
-            <Tag justifyContent="center">D3.js</Tag>
-          </Stack>
-        </VStack>
+          <VStack width="full" alignItems="start" spacing={4}>
+            <Heading as="h2" fontSize="3xl">
+              {t("projects.details.technologies")}
+            </Heading>
 
-        <VStack width="full" alignItems="start" spacing={4}>
-          <Heading as="h2" fontSize="3xl">
-            {t("projects.details.screenshots")}
-          </Heading>
+            <Stack direction={{ base: "column", lg: "row" }} width="full">
+              <Tag justifyContent="center">XML</Tag>
+              <Tag justifyContent="center">XML Schema Definiton</Tag>
+              <Tag justifyContent="center">XSL Transformation</Tag>
+              <Tag justifyContent="center">D3.js</Tag>
+            </Stack>
+          </VStack>
 
-          <Box alignSelf="center" width="full">
-            <ImageSlider
-              images={[screenshot1, screenshot2, screenshot3]}
-              index={sliderIndex}
-              onIndexChange={handleSliderIndexChange}
-            ></ImageSlider>
-          </Box>
+          <VStack width="full" alignItems="start" spacing={4}>
+            <Heading as="h2" fontSize="3xl">
+              {t("projects.details.screenshots")}
+            </Heading>
+
+            <Box alignSelf="center" width="full">
+              <ImageSlider
+                images={[screenshot1, screenshot2, screenshot3]}
+                index={sliderIndex}
+                onIndexChange={handleSliderIndexChange}
+              ></ImageSlider>
+            </Box>
+          </VStack>
         </VStack>
       </VStack>
-    </VStack>
+    </>
   );
 };

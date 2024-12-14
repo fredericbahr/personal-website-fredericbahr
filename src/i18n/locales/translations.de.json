@@ -34,6 +34,7 @@
     "title": "Erfahrung",
     "subtitle": "Mein bisheriger Werdegang",
     "jobTitles": {
+      "seniorSoftwareDeveloper": "Senior Software Developer",
       "softwareDeveloper": "Software Developer",
       "juniorSoftwareDeveloper": "Junior Software Developer",
       "workingStudent": "Werkstudent",
@@ -42,11 +43,18 @@
       "master": "Masterand"
     },
     "experiences": {
+      "softwareDeveloperIpoque": {
+        "description": {
+          "first": "Entwicklung von User Interfaces im Basis-Team",
+          "second": "Implementierung und Wartung von Komponenten für ein internes Designsystem",
+          "third": "Implementierung und Wartung eines internen Frameworks für Micro Frontends"
+        }
+      },
       "juniorSoftwareDeveloperIpoque": {
         "description": {
-          "first": "Entwicklung von UI-Logik im Core-Team",
+          "first": "Entwicklung von User Interfaces im Basis-Team",
           "second": "Implementierung und Wartung von Komponenten für ein internes Designsystem",
-          "third": "Implementierung und Wartung eines internen Frontend Frameworks für Micro Frontends"
+          "third": "Implementierung und Wartung eines internen Frameworks für Micro Frontends"
         }
       },
       "workingStudentIpoque": {

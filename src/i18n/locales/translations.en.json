@@ -34,6 +34,7 @@
     "title": "Experience",
     "subtitle": "My professional journey",
     "jobTitles": {
+      "seniorSoftwareDeveloper": "Senior Software Developer",
       "softwareDeveloper": "Software Developer",
       "juniorSoftwareDeveloper": "Junior Software Developer",
       "workingStudent": "Working Student",
@@ -42,9 +43,16 @@
       "master": "Master thesis"
     },
     "experiences": {
+      "softwareDeveloperIpoque": {
+        "description": {
+          "first": "Development of User Interfaces in the core team",
+          "second": "Implementation and maintenance of components for an internal design system",
+          "third": "Implementation and maintenance of an internal frontend framework for micro frontends"
+        }
+      },
       "juniorSoftwareDeveloperIpoque": {
         "description": {
-          "first": "Development of UI logic in the core team",
+          "first": "Development of User Interfaces in the core team",
           "second": "Implementation and maintenance of components for an internal design system",
           "third": "Implementation and maintenance of an internal frontend framework for micro frontends"
         }

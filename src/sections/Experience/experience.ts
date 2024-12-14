@@ -41,11 +41,25 @@ export interface IExperience {
 
 export const experiences: IExperience[] = [
   {
+    title: JobTitle.SoftwareDeveloper,
+    company: "ipoque GmbH",
+    companyUrl: "https://www.ipoque.com/",
+    startDate: "2024-12-01",
+    endDate: "present",
+    location: "Leipzig, Deutschland",
+    description: [
+      "experience.experiences.softwareDeveloperIpoque.description.first",
+      "experience.experiences.softwareDeveloperIpoque.description.second",
+      "experience.experiences.softwareDeveloperIpoque.description.third",
+    ],
+    skills: ["TypeScript", "Micro Frontends", "Web Components", "Lit", "React", "Angular"],
+  },
+  {
     title: JobTitle.JuniorSoftwareDeveloper,
     company: "ipoque GmbH",
     companyUrl: "https://www.ipoque.com/",
     startDate: "2024-02-01",
-    endDate: "present",
+    endDate: "2024-11-31",
     location: "Leipzig, Deutschland",
     description: [
       "experience.experiences.juniorSoftwareDeveloperIpoque.description.first",

@@ -209,7 +209,9 @@
       "email": "E-Mail",
       "message": "Nachricht",
       "submit": "Senden",
-      "emailError": "Bitte gib eine gültige E-Mail-Adresse ein."
+      "emailError": "Bitte gib eine gültige E-Mail-Adresse ein.",
+      "sentSuccess": "Deine Nachricht wurde erfolgreich versendet!",
+      "sentError": "Es gab ein Problem beim Senden deiner Nachricht. Bitte verwende die E-Mail-Adresse."
     }
   }
 }

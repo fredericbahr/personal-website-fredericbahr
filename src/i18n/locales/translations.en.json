@@ -209,7 +209,9 @@
       "email": "Email",
       "message": "Message",
       "submit": "Send message",
-      "emailError": "Please enter a valid email address."
+      "emailError": "Please enter a valid email address.",
+      "sentSuccess": "Your message has been sent successfully.",
+      "sentError": "An error occurred while sending your message. Please use the e-mail address directly."
     }
   }
 }

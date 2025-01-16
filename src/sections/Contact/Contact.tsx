@@ -10,10 +10,22 @@
  * See LICENSE for licensing information.
  */
 
-import { Flex, FormControl, FormErrorMessage, Grid, Heading, HStack, Icon, Link, Text, VStack } from "@chakra-ui/react";
+import {
+  Flex,
+  FormControl,
+  FormErrorMessage,
+  Grid,
+  Heading,
+  HStack,
+  Icon,
+  Link,
+  Text,
+  useToast,
+  VStack,
+} from "@chakra-ui/react";
 import emailjs from "@emailjs/browser";
 import { EnvelopeSimple } from "@phosphor-icons/react";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import { Button } from "../../components/Button/Button";
@@ -26,6 +38,9 @@ import { Textarea } from "../../components/Textarea/Textarea";
 export const Contact = () => {
   /** translation hook */
   const { t } = useTranslation();
+
+  /** toast hook to show toast notifications */
+  const toast = useToast();
 
   /** state for the name input */
   const [name, setName] = useState("");
@@ -50,28 +65,28 @@ export const Contact = () => {
   };
 
   /** Handles the change of the name input. */
-  const handleNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleNameChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
     setName(event.target.value);
   };
 
   /** Handles the change of the email input. */
-  const handleEmailChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleEmailChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
     setEmail(event.target.value);
   };
 
   /** Handles the change of the message input. */
-  const handleMessageChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+  const handleMessageChange = (event: React.ChangeEvent<HTMLTextAreaElement>): void => {
     setMessage(event.target.value);
   };
 
   /** Handles the click on the send button. */
-  const handleSendClick = async (event: React.SyntheticEvent) => {
+  const handleSendClick = async (event: React.SyntheticEvent): Promise<void> => {
     event.preventDefault();
     event.stopPropagation();
 
     const templateParams = {
       from_completeName: name,
-      from_emailcontact: email,
+      from_emailContact: email,
       message: message,
     };
 
@@ -88,10 +103,33 @@ export const Contact = () => {
       );
 
       setEmailError(false);
+      setName("");
+      setEmail("");
+      setMessage("");
+      toast({
+        description: t("contact.form.sentSuccess"),
+        status: "success",
+        duration: 5000,
+        isClosable: true,
+        position: "bottom-right",
+      });
     } catch (error) {
       console.error("Failed to send email", error);
+      toast({
+        description: t("contact.form.sentError"),
+        status: "error",
+        duration: 5000,
+        isClosable: true,
+        position: "bottom-right",
+      });
     }
   };
+
+  useEffect(() => {
+    emailjs.init({
+      publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+    });
+  }, []);
 
   return (
     <VStack spacing={12} align="start" width="full" marginTop={{ base: 8, lg: 16 }}>
@@ -123,12 +161,18 @@ export const Contact = () => {
             placeholder={t("contact.form.name")}
             gridColumn="1"
             gridRow="1"
+            autoComplete="name"
             value={name}
             onChange={handleNameChange}
           ></Input>
 
           <FormControl isInvalid={emailError} gridColumn="1" gridRow="2">
-            <Input placeholder={t("contact.form.email")} value={email} onChange={handleEmailChange}></Input>
+            <Input
+              placeholder={t("contact.form.email")}
+              value={email}
+              type="email"
+              onChange={handleEmailChange}
+            ></Input>
             {emailError && <FormErrorMessage>{t("contact.form.emailError")}</FormErrorMessage>}
           </FormControl>
 

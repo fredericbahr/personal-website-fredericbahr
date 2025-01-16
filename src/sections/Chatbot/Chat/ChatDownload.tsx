@@ -22,7 +22,7 @@ import { Document, Page, pdfjs } from "react-pdf";
 import { IChatDownload } from "../chatbot.interface";
 import { ElementDimension, useElementDimensions } from "../hooks/useElementDimensions";
 
-pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/legacy/build/pdf.worker.min.js`;
+pdfjs.GlobalWorkerOptions.workerSrc = new URL("pdfjs-dist/build/pdf.worker.min.mjs", import.meta.url).toString();
 
 /**
  * Component to render the chat download

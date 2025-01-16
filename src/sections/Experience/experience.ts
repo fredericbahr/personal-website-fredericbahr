@@ -59,7 +59,7 @@ export const experiences: IExperience[] = [
     company: "ipoque GmbH",
     companyUrl: "https://www.ipoque.com/",
     startDate: "2024-02-01",
-    endDate: "2024-11-31",
+    endDate: "2024-11-30",
     location: "Leipzig, Deutschland",
     description: [
       "experience.experiences.juniorSoftwareDeveloperIpoque.description.first",

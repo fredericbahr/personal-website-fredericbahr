@@ -55,10 +55,8 @@ export const Experience = () => {
   /** color for the divider */
   const dividerColor = useColorModeValue("gray.500", "gray.400");
 
-  /**
-   * Handles the download of the CV by creating a new link element and clicking it
-   */
-  const handleCVDownload = () => {
+  /** Handles the download of the CV by creating a new link element and clicking it */
+  const handleCVDownload = (): void => {
     const button = document.createElement("a");
     button.href = cv;
     button.download = "Lebenslauf_Frederic_Bahr.pdf";
